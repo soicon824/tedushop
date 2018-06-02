@@ -1,0 +1,2 @@
+# tedushop
+firt project learning
