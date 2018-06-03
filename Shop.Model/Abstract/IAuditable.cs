@@ -1,20 +1,17 @@
 ﻿using System;
 
-namespace Shop.Model.Abstract
+namespace TeduShop.Model.Abstract
 {
     public interface IAuditable
     {
-        DateTime? CreateTime { get; set; }
-        string CreatedBy { get; set; }
+        DateTime? CreatedDate { set; get; }
+        string CreatedBy { set; get; }
+        DateTime? UpdatedDate { set; get; }
+        string UpdatedBy { set; get; }
 
-        DateTime? UpdateDate { get; set; }
+        string MetaKeyword { set; get; }
+        string MetaDescription { set; get; }
 
-        string  UpdateBy { get; set; }
-
-        string MetaKeyword { get; set; }
-
-        string MetaDescription { get; set; }
-
-        bool Status { get; set; }
+        bool Status { set; get; }
     }
 }

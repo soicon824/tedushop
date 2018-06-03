@@ -1,2 +1,16 @@
 C:\Users\nphp\source\repos\tedushop\Shop.Model\obj\Debug\Shop.Model.csprojAssemblyReference.cache
 C:\Users\nphp\source\repos\tedushop\Shop.Model\obj\Debug\Shop.Model.csproj.CoreCompileInputs.cache
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Shop.Model.dll.config
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Shop.Model.dll
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Shop.Model.pdb
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\EntityFramework.dll
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Shop.Common.dll
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Shop.Common.pdb
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\EntityFramework.xml
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.csprojAssemblyReference.cache
+D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.csproj.CoreCompileInputs.cache
+D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.csproj.CopyComplete
+D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.dll
+D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.pdb

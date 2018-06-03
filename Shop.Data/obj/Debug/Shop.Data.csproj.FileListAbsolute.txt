@@ -1,0 +1,14 @@
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Data.dll.config
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Data.dll
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Data.pdb
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\EntityFramework.dll
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Common.dll
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Common.pdb
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\EntityFramework.xml
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.csprojAssemblyReference.cache
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.csproj.CoreCompileInputs.cache
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.csproj.CopyComplete
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.dll
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.pdb
