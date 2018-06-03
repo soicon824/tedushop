@@ -1,0 +1,2 @@
+C:\Users\nphp\source\repos\tedushop\Shop.Model\obj\Debug\Shop.Model.csprojAssemblyReference.cache
+C:\Users\nphp\source\repos\tedushop\Shop.Model\obj\Debug\Shop.Model.csproj.CoreCompileInputs.cache
