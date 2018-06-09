@@ -50,3 +50,5 @@ D:\SourceGit\tedushop\Shop.UnitTest\obj\Debug\Shop.UnitTest.csproj.CoreCompileIn
 D:\SourceGit\tedushop\Shop.UnitTest\obj\Debug\Shop.UnitTest.csproj.CopyComplete
 D:\SourceGit\tedushop\Shop.UnitTest\obj\Debug\Shop.UnitTest.dll
 D:\SourceGit\tedushop\Shop.UnitTest\obj\Debug\Shop.UnitTest.pdb
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\EntityFramework.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\EntityFramework.xml

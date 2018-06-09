@@ -12,3 +12,6 @@ D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.csproj.CoreCompileInputs.cac
 D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.csproj.CopyComplete
 D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.dll
 D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.pdb
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Model.dll
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Model.pdb
+D:\SourceGit\tedushop\Shop.Data\bin\Debug\Shop.Model.dll.config
