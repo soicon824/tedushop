@@ -10,9 +10,9 @@ namespace Shop.Data
 {
     public class TeduShopDbContext : DbContext
     {
-        public TeduShopDbContext() :base("TeduShopConnection")
+        public TeduShopDbContext() : base("TeduShopConnection")
         {
-            base.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = false;
         }
         public DbSet<Footer> Footers { get; set; }
         public DbSet<Menu> Menus { get; set; }
