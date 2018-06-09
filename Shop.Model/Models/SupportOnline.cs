@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TeduShop.Model.Models
+namespace Shop.Model.Models
 {
     [Table("SupportOnlines")]
     public class SupportOnline
@@ -32,7 +32,6 @@ namespace TeduShop.Model.Models
         [MaxLength(50)]
         public string Facebook { set; get; }
 
-        [MaxLength(50)]
         public bool Status { set; get; }
 
         public int? DisplayOrder { set; get; }

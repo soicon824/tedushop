@@ -13,3 +13,5 @@ D:\SourceGit\tedushop\Shop.Service\obj\Debug\Shop.Service.csproj.CoreCompileInpu
 D:\SourceGit\tedushop\Shop.Service\obj\Debug\Shop.Service.csproj.CopyComplete
 D:\SourceGit\tedushop\Shop.Service\obj\Debug\Shop.Service.dll
 D:\SourceGit\tedushop\Shop.Service\obj\Debug\Shop.Service.pdb
+D:\SourceGit\tedushop\Shop.Service\bin\Debug\EntityFramework.dll
+D:\SourceGit\tedushop\Shop.Service\bin\Debug\EntityFramework.xml
