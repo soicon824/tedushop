@@ -52,3 +52,14 @@ D:\SourceGit\tedushop\Shop.UnitTest\obj\Debug\Shop.UnitTest.dll
 D:\SourceGit\tedushop\Shop.UnitTest\obj\Debug\Shop.UnitTest.pdb
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\EntityFramework.dll
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\EntityFramework.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Castle.Core.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\EntityFramework.SqlServer.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Moq.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\System.ValueTuple.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Castle.Core.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\EntityFramework.SqlServer.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Moq.pdb
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Moq.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\System.ValueTuple.xml
