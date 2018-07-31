@@ -1,4 +1,3 @@
-D:\SourceGit\tedushop\Shop.Web\bin\ApplicationInsights.config
 D:\SourceGit\tedushop\Shop.Web\bin\Shop.Web.dll.config
 D:\SourceGit\tedushop\Shop.Web\bin\Shop.Web.dll
 D:\SourceGit\tedushop\Shop.Web\bin\Shop.Web.pdb

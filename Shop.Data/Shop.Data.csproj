@@ -58,12 +58,17 @@
     <Compile Include="Migrations\201806091430353_InitialDB.Designer.cs">
       <DependentUpon>201806091430353_InitialDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807311415041_AddErrorTable.cs" />
+    <Compile Include="Migrations\201807311415041_AddErrorTable.Designer.cs">
+      <DependentUpon>201807311415041_AddErrorTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\PostCategoryRepository.cs" />
     <Compile Include="Repositories\PostRepository.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository - Copy.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
-    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="TeduShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201806091430353_InitialDB.resx">
       <DependentUpon>201806091430353_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807311415041_AddErrorTable.resx">
+      <DependentUpon>201807311415041_AddErrorTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
