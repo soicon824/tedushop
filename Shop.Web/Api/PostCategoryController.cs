@@ -14,7 +14,7 @@ namespace Shop.Web.Api
     public class PostCategoryController : ApiControllerBase
     {
         IPostCategoryService _postCategoryService;
-        public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService):base(errorService)
+        public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) : base(errorService)
         {
             this._postCategoryService = postCategoryService;
         }
@@ -23,16 +23,9 @@ namespace Shop.Web.Api
         {
             return base.CreateHttpResponse(request, () =>
             {
+                var listAll = _postCategoryService.GetAll();
                 HttpResponseMessage response = null;
-                if (ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listAll = _postCategoryService.GetAll();
-                    response = request.CreateResponse(HttpStatusCode.OK, listAll);
-                }
+                response = request.CreateResponse(HttpStatusCode.OK, listAll);
                 return response;
             });
         }
@@ -41,7 +34,7 @@ namespace Shop.Web.Api
             return base.CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
                     request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
@@ -93,6 +86,6 @@ namespace Shop.Web.Api
             });
         }
 
-        
+
     }
 }

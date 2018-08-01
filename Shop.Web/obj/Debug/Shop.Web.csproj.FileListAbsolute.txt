@@ -110,3 +110,15 @@ D:\SourceGit\tedushop\Shop.Web\obj\Debug\Shop.Web.csproj.CoreCompileInputs.cache
 D:\SourceGit\tedushop\Shop.Web\obj\Debug\Shop.Web.csproj.CopyComplete
 D:\SourceGit\tedushop\Shop.Web\obj\Debug\Shop.Web.dll
 D:\SourceGit\tedushop\Shop.Web\obj\Debug\Shop.Web.pdb
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.Integration.Mvc.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.Integration.WebApi.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Owin.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.Integration.Mvc.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.Integration.WebApi.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Autofac.Integration.WebApi.pdb

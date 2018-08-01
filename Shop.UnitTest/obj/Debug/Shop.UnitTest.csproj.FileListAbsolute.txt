@@ -1,4 +1,3 @@
-D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\ApplicationInsights.config
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -63,3 +62,13 @@ D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Moq.pdb
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Moq.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\System.ValueTuple.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Owin.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.Mvc.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.WebApi.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.Mvc.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.WebApi.pdb
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.WebApi.xml
