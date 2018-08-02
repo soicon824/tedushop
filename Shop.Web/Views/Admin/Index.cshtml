@@ -4,7 +4,6 @@
 }
 
 <!DOCTYPE html>
-
 <html ng-app="myModule">
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,9 +12,18 @@
     <script src="~/Scripts/spa/app.js"></script>
 </head>
 <body>
-    <div ng-controller="myController">
+    <div ng-controller="schoolController">
         10 + 20 = {{10+20}} <br />
         {{message}}
+        <div ng-controller="studentController">
+            <br />
+            {{message}}
+        </div>
+        <div ng-controller="teacherController">
+            <br />
+            {{message}}
+        </div>
     </div>
+
 </body>
 </html>
