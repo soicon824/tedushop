@@ -86,3 +86,5 @@ D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
