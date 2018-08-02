@@ -13,16 +13,9 @@
 </head>
 <body>
     <div ng-controller="schoolController">
-        10 + 20 = {{10+20}} <br />
-        {{message}}
-        <div ng-controller="studentController">
-            <br />
-            {{message}}
-        </div>
-        <div ng-controller="teacherController">
-            <br />
-            {{message}}
-        </div>
+        <input type="number" ng-model="num" />{{num}}
+       {{message}}
+       <button ng-click="checkNumber(num)">check</button>
     </div>
 
 </body>

@@ -1,17 +1,27 @@
 ﻿var myApp = angular.module('myModule', []);
 myApp.controller("schoolController", schoolController);
-myApp.controller("studentController", studentController);
-myApp.controller("teacherController", teacherController);
+myApp.service('validator', validator)
+function schoolController($scope, validator) {
+    $scope.checkNumber = function (num) {
+        $scope.message = validator.checkNumberMain(num);
 
-myApp.$inject = ['$scope'];
-function schoolController($scope) {
-    $scope.message = "This is my message from controller";
+    }
+    $scope.num = 1;
+    
 }
 
-function studentController($scope) {
-    $scope.message = "This is my studentController";
+function validator($window) {
+    return {
+        checkNumberMain:checkNumber
+    }
+    function checkNumber(input) {
+        if (input % 2 == 0) {
+            return 'This is so chan';
+        }
+        else {
+            return "so le";
+        }
+    }
 }
 
-function teacherController($scope) {
-    //$scope.message = "This is my teacherController";
-}
+
