@@ -122,3 +122,9 @@ D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.xml
 D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
 D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\SourceGit\tedushop\Shop.Web\bin\Autofac.Integration.WebApi.pdb
+D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\System.IO.Compression.dll
+D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\VBCSCompiler.exe

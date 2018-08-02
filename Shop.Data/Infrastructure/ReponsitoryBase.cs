@@ -46,13 +46,15 @@ namespace Shop.Data.Infrastructure
 
         public virtual T Delete(T entity)
         {
-            return dbSet.Remove(entity);
+            T result = dbSet.Remove(entity);
+            return result;
         }
 
         public virtual T Delete(int Id)
         {
             var entity = dbSet.Find(Id);
-            return dbSet.Remove(entity);
+            T result = dbSet.Remove(entity);
+            return result;
         }
 
         public virtual void DeleteMulti(Expression<Func<T, bool>> where)
@@ -64,18 +66,21 @@ namespace Shop.Data.Infrastructure
 
         public virtual T GetSingleById(int id)
         {
-            return dbSet.Find(id);
+            T result = dbSet.Find(id);
+            return result;
         }
 
         public virtual IEnumerable<T> GetMany(Expression<Func<T, bool>> where, string includes)
         {
-            return dbSet.Where(where).ToList();
+            var result = dbSet.Where(where).ToList();
+            return result;
         }
 
 
         public virtual int Count(Expression<Func<T, bool>> where)
         {
-            return dbSet.Count(where);
+            var result = dbSet.Count(where);
+            return result;
         }
 
         public IEnumerable<T> GetAll(string[] includes = null)
@@ -86,10 +91,12 @@ namespace Shop.Data.Infrastructure
                 var query = dataContext.Set<T>().Include(includes.First());
                 foreach (var include in includes.Skip(1))
                     query = query.Include(include);
-                return query.AsQueryable();
+                var result1 = query.AsQueryable();
+                return result1;
             }
 
-            return dataContext.Set<T>().AsQueryable();
+            var result = dataContext.Set<T>().AsQueryable();
+            return result;
         }
 
         public T GetSingleByCondition(Expression<Func<T, bool>> expression, string[] includes = null)
@@ -99,9 +106,11 @@ namespace Shop.Data.Infrastructure
                 var query = dataContext.Set<T>().Include(includes.First());
                 foreach (var include in includes.Skip(1))
                     query = query.Include(include);
-                return query.FirstOrDefault(expression);
+                var result1 = query.FirstOrDefault(expression);
+                return result1;
             }
-            return dataContext.Set<T>().FirstOrDefault(expression);
+            var result = dataContext.Set<T>().FirstOrDefault(expression);
+            return result;
         }
 
         public virtual IEnumerable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null)
@@ -112,10 +121,12 @@ namespace Shop.Data.Infrastructure
                 var query = dataContext.Set<T>().Include(includes.First());
                 foreach (var include in includes.Skip(1))
                     query = query.Include(include);
-                return query.Where<T>(predicate).AsQueryable<T>();
+                var result1 = query.Where<T>(predicate).AsQueryable<T>();
+                return result1;
             }
 
-            return dataContext.Set<T>().Where<T>(predicate).AsQueryable<T>();
+            var result = dataContext.Set<T>().Where<T>(predicate).AsQueryable<T>();
+            return result;
         }
 
         public virtual IEnumerable<T> GetMultiPaging(Expression<Func<T, bool>> predicate, out int total, int index = 0, int size = 20, string[] includes = null)
@@ -138,12 +149,14 @@ namespace Shop.Data.Infrastructure
 
             _resetSet = skipCount == 0 ? _resetSet.Take(size) : _resetSet.Skip(skipCount).Take(size);
             total = _resetSet.Count();
-            return _resetSet.AsQueryable();
+            var result = _resetSet.AsQueryable();
+            return result;
         }
 
         public bool CheckContains(Expression<Func<T, bool>> predicate)
         {
-            return dataContext.Set<T>().Count<T>(predicate) > 0;
+            var result = dataContext.Set<T>().Count<T>(predicate) > 0;
+            return result;
         }
         #endregion
     }

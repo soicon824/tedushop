@@ -1,6 +1,9 @@
-﻿using Shop.Model.Models;
+﻿using AutoMapper;
+using Shop.Model.Models;
 using Shop.Service;
 using Shop.Web.Infrastructure.Core;
+using Shop.Web.Infrastructure.Extensions;
+using Shop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +26,15 @@ namespace Shop.Web.Api
         {
             return base.CreateHttpResponse(request, () =>
             {
-                var listAll = _postCategoryService.GetAll();
+                var listPostCategory = _postCategoryService.GetAll();
+                var listPostCategoryVM = Mapper.Map<List<PostCategoryViewModel>>(listPostCategory);
                 HttpResponseMessage response = null;
-                response = request.CreateResponse(HttpStatusCode.OK, listAll);
+                response = request.CreateResponse(HttpStatusCode.OK, listPostCategoryVM);
                 return response;
             });
         }
-        public HttpResponseMessage Post(HttpRequestMessage request, PostCategory postCategory)
+        [Route("add")]
+        public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
         {
             return base.CreateHttpResponse(request, () =>
             {
@@ -40,15 +45,17 @@ namespace Shop.Web.Api
                 }
                 else
                 {
-                    var postAdd = _postCategoryService.Add(postCategory);
+                    PostCategory newPostCategory = new PostCategory();
+                    newPostCategory.UpdatePostCategory(postCategoryVM);
+                    var postCategory = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Savechanges();
-                    response = request.CreateResponse(HttpStatusCode.Created, postAdd);
+                    response = request.CreateResponse(HttpStatusCode.Created, postCategory);
                 }
                 return response;
             });
         }
-
-        public HttpResponseMessage Put(HttpRequestMessage request, PostCategory postCategory)
+        [Route("update")]
+        public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
         {
             return base.CreateHttpResponse(request, () =>
             {
@@ -59,14 +66,16 @@ namespace Shop.Web.Api
                 }
                 else
                 {
-                    _postCategoryService.Update(postCategory);
+                    var postCategoryDb = _postCategoryService.GetById(postCategoryVM.ID);
+                    postCategoryDb.UpdatePostCategory(postCategoryVM);
+                    _postCategoryService.Update(postCategoryDb);
                     _postCategoryService.Savechanges();
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
                 return response;
             });
         }
-
+        [Route("delete")]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return base.CreateHttpResponse(request, () =>
