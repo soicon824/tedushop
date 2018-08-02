@@ -15,3 +15,7 @@ D:\SourceGit\tedushop\Shop.Service\obj\Debug\Shop.Service.dll
 D:\SourceGit\tedushop\Shop.Service\obj\Debug\Shop.Service.pdb
 D:\SourceGit\tedushop\Shop.Service\bin\Debug\EntityFramework.dll
 D:\SourceGit\tedushop\Shop.Service\bin\Debug\EntityFramework.xml
+D:\SourceGit\tedushop\Shop.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SourceGit\tedushop\Shop.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\SourceGit\tedushop\Shop.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SourceGit\tedushop\Shop.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml

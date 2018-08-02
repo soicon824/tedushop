@@ -14,3 +14,7 @@ D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.csproj.CoreCompileInputs.c
 D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.csproj.CopyComplete
 D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.dll
 D:\SourceGit\tedushop\Shop.Model\obj\Debug\Shop.Model.pdb
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\SourceGit\tedushop\Shop.Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

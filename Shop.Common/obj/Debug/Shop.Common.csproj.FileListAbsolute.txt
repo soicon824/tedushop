@@ -9,4 +9,3 @@ D:\SourceGit\tedushop\Shop.Common\bin\Debug\Shop.Common.pdb
 D:\SourceGit\tedushop\Shop.Common\obj\Debug\Shop.Common.csproj.CoreCompileInputs.cache
 D:\SourceGit\tedushop\Shop.Common\obj\Debug\Shop.Common.dll
 D:\SourceGit\tedushop\Shop.Common\obj\Debug\Shop.Common.pdb
-D:\SourceGit\tedushop\Shop.Common\obj\Debug\Shop.Common.csprojAssemblyReference.cache

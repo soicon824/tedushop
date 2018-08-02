@@ -1,5 +1,8 @@
 namespace Shop.Data.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Shop.Model.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -10,6 +13,7 @@ namespace Shop.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Shop.Data.TeduShopDbContext context)
@@ -26,6 +30,27 @@ namespace Shop.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
+            var rolemanager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
+
+            var user = new ApplicationUser()
+            {
+                UserName = "tedu",
+                Email = "abc@gmail.com",
+                EmailConfirmed = true,
+                BirthDay = DateTime.Now,
+                FullName = "Phuc Thien Pham"
+            };
+            manager.Create(user, "123456");
+
+            if(!rolemanager.Roles.Any())
+            {
+                rolemanager.Create(new IdentityRole { Name = "Admin" });
+                rolemanager.Create(new IdentityRole { Name = "User" });
+            }
+
+            var adminUser = manager.FindByEmail(user.Email);
+            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
         }
     }
 }

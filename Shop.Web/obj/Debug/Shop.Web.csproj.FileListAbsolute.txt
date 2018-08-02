@@ -128,3 +128,17 @@ D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\Microso
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\System.IO.Compression.dll
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\bin\roslyn\VBCSCompiler.exe
+D:\SourceGit\tedushop\Shop.Web\bin\AutoMapper.dll
+D:\SourceGit\tedushop\Shop.Web\bin\AutoMapper.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Security.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Security.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SourceGit\tedushop\Shop.Web\bin\Microsoft.Owin.Security.OAuth.xml

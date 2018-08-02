@@ -72,3 +72,17 @@ D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.Mvc.xml
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.WebApi.pdb
 D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Autofac.Integration.WebApi.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\AutoMapper.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\AutoMapper.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\SourceGit\tedushop\Shop.UnitTest\bin\Debug\Microsoft.Owin.Security.OAuth.xml
