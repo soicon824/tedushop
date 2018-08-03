@@ -4,6 +4,7 @@ namespace Shop.Data.Migrations
     using Microsoft.AspNet.Identity.EntityFramework;
     using Shop.Model.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -43,7 +44,7 @@ namespace Shop.Data.Migrations
             };
             manager.Create(user, "123456");
 
-            if(!rolemanager.Roles.Any())
+            if (!rolemanager.Roles.Any())
             {
                 rolemanager.Create(new IdentityRole { Name = "Admin" });
                 rolemanager.Create(new IdentityRole { Name = "User" });
@@ -51,6 +52,40 @@ namespace Shop.Data.Migrations
 
             var adminUser = manager.FindByEmail(user.Email);
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+
+            //
+            CreateProductCategorySample(context);
+        }
+
+        protected void CreateProductCategorySample(Shop.Data.TeduShopDbContext context)
+        {
+            if (context.ProductCategories.Count() == 0)
+            {
+                List<ProductCategory> productCategories = new List<ProductCategory>()
+            {
+                new ProductCategory()
+                {
+                    Name="Product cat 1",
+                    Alias="Alias product cat 1",
+                    Status = true
+                },
+                new ProductCategory()
+                {
+                    Name="Product cat 2",
+                    Alias="Alias product cat 2",
+                    Status = true
+                },
+                new ProductCategory()
+                {
+                    Name="Product cat 3",
+                    Alias="Alias product cat 3",
+                    Status = true
+                }
+            };
+
+                context.ProductCategories.AddRange(productCategories);
+                context.SaveChanges();
+            }
         }
     }
 }
