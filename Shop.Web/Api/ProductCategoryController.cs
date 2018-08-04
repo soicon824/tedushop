@@ -45,6 +45,22 @@ namespace Shop.Web.Api
                 return response;
             });
         }
+
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        {
+            return base.CreateHttpResponse(request, () =>
+            {
+                var productCategory = _ProductCategoryService.GetById(id);
+                var productCategoryVM = Mapper.Map<ProductCategoryViewModel>(productCategory);
+
+                HttpResponseMessage response = null;
+                response = request.CreateResponse(HttpStatusCode.OK, productCategoryVM);
+                return response;
+            });
+        }
+
         [Route("getallparents")]
         [HttpGet]
         public HttpResponseMessage GetAllParents(HttpRequestMessage request)
@@ -84,46 +100,49 @@ namespace Shop.Web.Api
             });
         }
 
-        //[Route("update")]
-        //public HttpResponseMessage Put(HttpRequestMessage request, ProductCategoryViewModel ProductCategoryVM)
-        //{
-        //    return base.CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        if (ModelState.IsValid)
-        //        {
-        //            request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-        //        }
-        //        else
-        //        {
-        //            var ProductCategoryDb = _ProductCategoryService.GetById(ProductCategoryVM.ID);
-        //            ProductCategoryDb.UpdateProductCategory(ProductCategoryVM);
-        //            _ProductCategoryService.Update(ProductCategoryDb);
-        //            _ProductCategoryService.Savechanges();
-        //            response = request.CreateResponse(HttpStatusCode.OK);
-        //        }
-        //        return response;
-        //    });
-        //}
-        //[Route("delete")]
-        //public HttpResponseMessage Delete(HttpRequestMessage request, int id)
-        //{
-        //    return base.CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        if (ModelState.IsValid)
-        //        {
-        //            request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-        //        }
-        //        else
-        //        {
-        //            var postDelete = _ProductCategoryService.Delete(id);
-        //            _ProductCategoryService.Savechanges();
-        //            response = request.CreateResponse(HttpStatusCode.Created, postDelete);
-        //        }
-        //        return response;
-        //    });
-        //}
+        [Route("update")]
+        public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryViewModel ProductCategoryVM)
+        {
+            return base.CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    //var productCategoryDb = _ProductCategoryService.GetById(ProductCategoryVM.ID);
+                    var productCategoryDb = new ProductCategory();
+                    productCategoryDb.UpdateProductCategory(ProductCategoryVM);
+                    _ProductCategoryService.Update(productCategoryDb);
+                    _ProductCategoryService.Savechanges();
+                    var responseData = Mapper.Map<ProductCategoryViewModel>(productCategoryDb);
+                    response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                }
+                return response;
+            });
+        }
+
+        [Route("delete")]
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
+        {
+            return base.CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (ModelState.IsValid)
+                {
+                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var postDelete = _ProductCategoryService.Delete(id);
+                    _ProductCategoryService.Savechanges();
+                    response = request.CreateResponse(HttpStatusCode.Created, postDelete);
+                }
+                return response;
+            });
+        }
 
 
     }
