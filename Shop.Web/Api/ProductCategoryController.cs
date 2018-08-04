@@ -22,6 +22,7 @@ namespace Shop.Web.Api
             this._ProductCategoryService = ProductCategoryService;
         }
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage Get(HttpRequestMessage request,string keyword, int page, int pageSize)
         {
             return base.CreateHttpResponse(request, () =>
@@ -44,27 +45,45 @@ namespace Shop.Web.Api
                 return response;
             });
         }
-        //[Route("add")]
-        //public HttpResponseMessage Post(HttpRequestMessage request, ProductCategoryViewModel ProductCategoryVM)
-        //{
-        //    return base.CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        if (ModelState.IsValid)
-        //        {
-        //            request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-        //        }
-        //        else
-        //        {
-        //            ProductCategory newProductCategory = new ProductCategory();
-        //            newProductCategory.UpdateProductCategory(ProductCategoryVM);
-        //            var ProductCategory = _ProductCategoryService.Add(newProductCategory);
-        //            _ProductCategoryService.Savechanges();
-        //            response = request.CreateResponse(HttpStatusCode.Created, ProductCategory);
-        //        }
-        //        return response;
-        //    });
-        //}
+        [Route("getallparents")]
+        [HttpGet]
+        public HttpResponseMessage GetAllParents(HttpRequestMessage request)
+        {
+            return base.CreateHttpResponse(request, () =>
+            {
+                var listProductCategory = _ProductCategoryService.GetAll();
+                var listProductCategoryVM = Mapper.Map<List<ProductCategoryViewModel>>(listProductCategory);
+                
+                HttpResponseMessage response = null;
+                response = request.CreateResponse(HttpStatusCode.OK, listProductCategoryVM);
+                return response;
+            });
+        }
+        [Route("create")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductCategoryViewModel ProductCategoryVM)
+        {
+            return base.CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    ProductCategory newProductCategory = new ProductCategory();
+                    newProductCategory.UpdateProductCategory(ProductCategoryVM);
+                    var productCategory = _ProductCategoryService.Add(newProductCategory);
+                    _ProductCategoryService.Savechanges();
+
+                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(productCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+                return response;
+            });
+        }
+
         //[Route("update")]
         //public HttpResponseMessage Put(HttpRequestMessage request, ProductCategoryViewModel ProductCategoryVM)
         //{

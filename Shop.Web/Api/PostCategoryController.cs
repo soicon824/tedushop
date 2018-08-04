@@ -22,6 +22,7 @@ namespace Shop.Web.Api
             this._postCategoryService = postCategoryService;
         }
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return base.CreateHttpResponse(request, () =>
@@ -33,15 +34,16 @@ namespace Shop.Web.Api
                 return response;
             });
         }
-        [Route("add")]
-        public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
+        [Route("create")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
         {
             return base.CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
                 if (ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
@@ -49,7 +51,10 @@ namespace Shop.Web.Api
                     newPostCategory.UpdatePostCategory(postCategoryVM);
                     var postCategory = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Savechanges();
-                    response = request.CreateResponse(HttpStatusCode.Created, postCategory);
+
+                    var responseData = Mapper.Map<PostCategory, PostCategoryViewModel>(postCategory);
+
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });
