@@ -2,6 +2,6 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "angular": "~1.5.5"
+    "toastr": "~2.1.3"
   }
 }

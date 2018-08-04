@@ -248,6 +248,7 @@
     <Content Include="app\shared\directives\pagerDirective.html" />
     <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\filters\statusFilter.js" />
+    <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
@@ -347,9 +348,14 @@
     <Content Include="Assets\admin\libs\bootstrap\js\npm.js" />
     <Content Include="Assets\admin\libs\fastclick\fastclick.js" />
     <Content Include="Assets\admin\libs\fastclick\fastclick.min.js" />
-    <Content Include="Assets\admin\libs\jQuery\jQuery-2.1.4.min.js" />
+    <Content Include="Assets\admin\libs\jQuery\dist\jquery.js" />
+    <Content Include="Assets\admin\libs\jQuery\dist\jquery.min.js" />
     <Content Include="Assets\admin\libs\slimScroll\jquery.slimscroll.js" />
     <Content Include="Assets\admin\libs\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Assets\admin\libs\toastr\toastr.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -397,6 +403,14 @@
     <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\admin\libs\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="app\shared\modules\tedushop.common.js" />
+    <Content Include="Assets\admin\libs\toastr\.bower.json" />
+    <Content Include="Assets\admin\libs\toastr\bower.json" />
+    <Content Include="Assets\admin\libs\toastr\LICENSE" />
+    <Content Include="Assets\admin\libs\toastr\README.md" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js.map" />
+    <Content Include="Assets\admin\libs\toastr\toastr.less" />
+    <Content Include="Assets\admin\libs\toastr\toastr.scss" />
+    <Content Include="Assets\admin\libs\jQuery\dist\jquery.min.map" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
