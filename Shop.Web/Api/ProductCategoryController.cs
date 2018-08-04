@@ -22,12 +22,12 @@ namespace Shop.Web.Api
             this._ProductCategoryService = ProductCategoryService;
         }
         [Route("getall")]
-        public HttpResponseMessage Get(HttpRequestMessage request, int page, int pageSize)
+        public HttpResponseMessage Get(HttpRequestMessage request,string keyword, int page, int pageSize)
         {
             return base.CreateHttpResponse(request, () =>
             {
                 int totalRow = 0;
-                var listProductCategory = _ProductCategoryService.GetAll();
+                var listProductCategory = _ProductCategoryService.GetAll(keyword);
                 totalRow = listProductCategory.Count();
                 var query = listProductCategory.OrderByDescending(x=>x.CreatedDate).Skip(page * pageSize).Take(pageSize);
                 var listProductCategoryVM = Mapper.Map<List<ProductCategoryViewModel>>(query);

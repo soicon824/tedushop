@@ -18,6 +18,7 @@ namespace Shop.Service
         IEnumerable<ProductCategory> GetAllPaging(int page, int pageSize, out int totalRow);
         ProductCategory GetById(int id);
         IEnumerable<ProductCategory> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
+        IEnumerable<ProductCategory> GetAll(string keyword);
         void Savechanges();
     }
     public class ProductCategoryService : IProductCategoryService
@@ -42,6 +43,14 @@ namespace Shop.Service
         public IEnumerable<ProductCategory> GetAll()
         {
             return _ProductCategoryRepository.GetAll();
+        }
+
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            else
+                return _ProductCategoryRepository.GetAll();
         }
 
         public IEnumerable<ProductCategory> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)

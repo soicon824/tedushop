@@ -6,11 +6,17 @@
         $scope.page = 0;
         $scope.pageCount = 0;
         $scope.getListProductCategory = getListProductCategory
+        $scope.keyword = '';
+        $scope.search = search;
 
+        function search() {
+            getListProductCategory();
+        }
         function getListProductCategory(page) {
             page = page || 0
             var config = {
                 params: {
+                    keyword: $scope.keyword,
                     page: page,
                     pagesize: 5
                 }
