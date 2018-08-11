@@ -20,13 +20,22 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="name" ng-model="productCategory.Name" />
+                    <input type="text" class="form-control" required ng-maxlength="256" name="name" ng-model="productCategory.Name" />
+                    <span ng-show="frmAddProductCategory.name.$invalid" class="error">
+                        Please input Name
+                    </span>
+                    <span ng-show="frmAddProductCategory.name.$error.maxlength" class="error">
+                        Please input Name 256 char
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Alias</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="alias" ng-model="productCategory.Alias" />
+                    <input type="text" class="form-control" required name="alias" ng-model="productCategory.Alias" />
+                    <span ng-show="frmAddProductCategory.alias.$invalid" class="error">
+                        Please input Alias
+                    </span>
                 </div>
             </div>
             <div class="form-group">
@@ -48,7 +57,10 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">DisplayOrder</label>
                 <div class="col-sm-10">
-                    <input type="number" class="form-control"  name="displayOrder" ng-model="productCategory.DisplayOrder"/>
+                    <input type="number" class="form-control" required name="displayOrder" ng-model="productCategory.DisplayOrder" />
+                    <span ng-show="frmAddProductCategory.displayOrder.$invalid" class="error">
+                        Please input order
+                    </span>
                 </div>
             </div>
             <div class="form-group">
@@ -86,7 +98,7 @@
 
             <div class="box-footer">
                 <button ui-sref="product_categories" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-default">Save</button>
+                <button type="submit" ng-disabled="frmAddProductCategory.$invalid" class="btn btn-default">Save</button>
             </div>
         </form>
     </div>

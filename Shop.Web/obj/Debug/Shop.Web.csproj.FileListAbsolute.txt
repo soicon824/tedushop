@@ -274,3 +274,4 @@ D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web.csproj.CopyComplete
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web.dll
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web.pdb
+D:\SourceGit\tedushop\Shop.Web\bin\CKFinder.dll

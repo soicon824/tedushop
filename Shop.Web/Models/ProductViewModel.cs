@@ -30,6 +30,7 @@ namespace Shop.Web.Models
         public bool? HotFlag { set; get; }
         public int? ViewCount { set; get; }
 
+        public string Tags { set; get; }
         public virtual ProductCategoryViewModel ProductCategory { set; get; }
 
         public DateTime? CreatedDate { set; get; }

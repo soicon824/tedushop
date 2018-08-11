@@ -23,12 +23,14 @@
         </div>
         <div class="col-md-6">
             <button class="btn btn-success" ui-sref="add_product_category">Add</button>
+            <button class="btn btn-success" ng-click="deleteMultiple()" id="btnDelete" disabled="disabled">Delete</button>
         </div>
     </div>
     <div class="box">
         <div>
             <table class="table table-bordered">
                 <tr>
+                    <th><label><input name="all" type="checkbox"  ng-click="selectAll()"/></label></th>
                     <th>Stt</th>
                     <th>Name</th>
                     <th>CreatedDate</th>
@@ -36,6 +38,7 @@
                     <th>Thao tac</th>
                 </tr>
                 <tr ng-repeat="item in productCategories">
+                    <td><input type="checkbox" name="all" ng-model="item.checked"/></td>
                     <td>{{item.ID}}</td>
                     <td>{{item.Name}}</td>
                     <td>{{item.CreatedDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
@@ -46,7 +49,7 @@
                     </td>
                     <td>
                         <button class="btn btn-primary" ui-sref="edit_product_category({id:item.ID})"><i class="fa fa-pencil"></i></button>
-                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
                     </td>
                 </tr>
                 <tfoot>

@@ -10,16 +10,17 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 
 namespace Shop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
     public class ProductCategoryController : ApiControllerBase
     {
-        IProductCategoryService _ProductCategoryService;
+        IProductCategoryService _productCategoryService;
         public ProductCategoryController(IErrorService errorService, IProductCategoryService ProductCategoryService) : base(errorService)
         {
-            this._ProductCategoryService = ProductCategoryService;
+            this._productCategoryService = ProductCategoryService;
         }
         [Route("getall")]
         [HttpGet]
@@ -28,7 +29,7 @@ namespace Shop.Web.Api
             return base.CreateHttpResponse(request, () =>
             {
                 int totalRow = 0;
-                var listProductCategory = _ProductCategoryService.GetAll(keyword);
+                var listProductCategory = _productCategoryService.GetAll(keyword);
                 totalRow = listProductCategory.Count();
                 var query = listProductCategory.OrderByDescending(x=>x.CreatedDate).Skip(page * pageSize).Take(pageSize);
                 var listProductCategoryVM = Mapper.Map<List<ProductCategoryViewModel>>(query);
@@ -52,7 +53,7 @@ namespace Shop.Web.Api
         {
             return base.CreateHttpResponse(request, () =>
             {
-                var productCategory = _ProductCategoryService.GetById(id);
+                var productCategory = _productCategoryService.GetById(id);
                 var productCategoryVM = Mapper.Map<ProductCategoryViewModel>(productCategory);
 
                 HttpResponseMessage response = null;
@@ -67,7 +68,7 @@ namespace Shop.Web.Api
         {
             return base.CreateHttpResponse(request, () =>
             {
-                var listProductCategory = _ProductCategoryService.GetAll();
+                var listProductCategory = _productCategoryService.GetAll();
                 var listProductCategoryVM = Mapper.Map<List<ProductCategoryViewModel>>(listProductCategory);
                 
                 HttpResponseMessage response = null;
@@ -90,8 +91,8 @@ namespace Shop.Web.Api
                 {
                     ProductCategory newProductCategory = new ProductCategory();
                     newProductCategory.UpdateProductCategory(ProductCategoryVM);
-                    var productCategory = _ProductCategoryService.Add(newProductCategory);
-                    _ProductCategoryService.Savechanges();
+                    var productCategory = _productCategoryService.Add(newProductCategory);
+                    _productCategoryService.Savechanges();
 
                     var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(productCategory);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
@@ -101,6 +102,7 @@ namespace Shop.Web.Api
         }
 
         [Route("update")]
+        [HttpPut]
         public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryViewModel ProductCategoryVM)
         {
             return base.CreateHttpResponse(request, () =>
@@ -115,8 +117,8 @@ namespace Shop.Web.Api
                     //var productCategoryDb = _ProductCategoryService.GetById(ProductCategoryVM.ID);
                     var productCategoryDb = new ProductCategory();
                     productCategoryDb.UpdateProductCategory(ProductCategoryVM);
-                    _ProductCategoryService.Update(productCategoryDb);
-                    _ProductCategoryService.Savechanges();
+                    _productCategoryService.Update(productCategoryDb);
+                    _productCategoryService.Savechanges();
                     var responseData = Mapper.Map<ProductCategoryViewModel>(productCategoryDb);
                     response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 }
@@ -125,25 +127,56 @@ namespace Shop.Web.Api
         }
 
         [Route("delete")]
+        [HttpDelete]
+        [AllowAnonymous]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
-            return base.CreateHttpResponse(request, () =>
+            return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
-                    var postDelete = _ProductCategoryService.Delete(id);
-                    _ProductCategoryService.Savechanges();
-                    response = request.CreateResponse(HttpStatusCode.Created, postDelete);
+                    var oldProductCategory = _productCategoryService.Delete(id);
+                    _productCategoryService.Savechanges();
+
+                    var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(oldProductCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
+
                 return response;
             });
         }
 
+        [Route("deletemulti")]
+        [HttpDelete]
+        [AllowAnonymous]
+        public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string lstId)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var ids = new JavaScriptSerializer().Deserialize<List<int>>(lstId);
+                    foreach (var item in ids)
+                    {
+                        _productCategoryService.Delete(item);
+                    }
+                    _productCategoryService.Savechanges();
+                    response = request.CreateResponse(HttpStatusCode.Created, true);
+                }
+
+                return response;
+            });
+        }
 
     }
 }

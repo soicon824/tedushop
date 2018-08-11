@@ -48,3 +48,5 @@ D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Data\obj\Debug\Shop.Da
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Data\obj\Debug\Shop.Data.csproj.CopyComplete
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Data\obj\Debug\Shop.Data.dll
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Data\obj\Debug\Shop.Data.pdb
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addtagsproduct.resources
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addentityProductTag.resources

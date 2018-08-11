@@ -10,10 +10,10 @@ namespace Shop.Web.Models
     {
         public int ID { set; get; }
 
-        [Required]
+        [Required(ErrorMessage ="please input name")]
         public string Name { set; get; }
 
-        [Required]
+        [Required(ErrorMessage = "please input alias")]
         public string Alias { set; get; }
 
         public string Description { set; get; }

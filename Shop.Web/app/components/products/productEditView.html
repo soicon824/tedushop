@@ -1,10 +1,154 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Product Edit page
+        <small>it all starts here</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a ui-sref="product_categories">Product</a></li>
+        <li><a href="#">Product Add</a></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="box box-info container">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add form</h3>
+        </div>
+        <form class="form-horizontal" novalidate name="frmAddProduct" role="form" ng-submit="updateProduct()">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required ng-maxlength="256" name="name" ng-model="product.Name" />
+                    <span ng-show="frmAddProduct.name.$invalid" class="error">
+                        Please input Name
+                    </span>
+                    <span ng-show="frmAddProduct.name.$error.maxlength" class="error">
+                        Please input Name 256 char
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Alias</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required name="alias" ng-model="product.Alias" />
+                    <span ng-show="frmAddProduct.alias.$invalid" class="error">
+                        Please input Alias
+                    </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="description" ng-model="Product.Description" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">CategoryID</label>
+                <div class="col-sm-10">
+                    <select name="parentId" ng-model="product.CategoryID"
+                            ng-options="option.ID as option.Name for option in categories" class="form-control">
+                        <option value="">Please select</option>
+                    </select>
+                    <input type="hidden" ng-model="product.CategoryID" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Image</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="image" ng-model="product.Image" />
+                    <button type="button" class="btn btn-default" ng-click="chooseImage()">Browser</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">More Images</label>
+                <div class="col-sm-10">
+                    <ul class="list-inline">
+                        <li ng-repeat="img in moreImages">
+                            <img ng-src="{{img}}" width="100" />
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-default" ng-click="chooseMoreImage()">Chon anh</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Price</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="price" ng-model="product.Price" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Warranty</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="warranty" ng-model="product.Warranty" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Promotion price</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="promotionPrice" ng-model="product.PromotionPrice" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" ckeditor="ckeditorOptions" name="description" ng-model="product.Description"></textarea>
 
-</body>
-</html>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Content</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="content" ng-model="product.Content"></textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Tags</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="tag" ng-model="product.Tags"></textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">HomeFlag</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" name="homeFlag" ng-model="product.homeFlag" ng-checked="product.HomeFlag" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">HotFlag</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" name="hotFlag" ng-model="product.hotFlag" ng-checked="product.HotFlag" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Meta keyword</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="metaKeyword" ng-model="product.MetaKeyword"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Meta description</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="metaDescription" ng-model="product.MetaDescription"></textarea>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" name="status" ng-model="product.Status" ng-checked="product.Status" />
+                </div>
+            </div>
+
+
+            <div class="box-footer">
+                <button ui-sref="products" class="btn btn-default">Cancel</button>
+                <button type="submit" ng-disabled="frmAddProduct.$invalid" class="btn btn-default">Save</button>
+            </div>
+        </form>
+    </div>
+</section><!-- /.content -->
