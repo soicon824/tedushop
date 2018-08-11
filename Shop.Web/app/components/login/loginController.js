@@ -1,9 +1,22 @@
 ﻿(function (app) {
-    app.controller('loginController', loginController);
-    loginController.$inject = ['$scope','apiService','notificationService','$state']
-    function loginController($scope, apiService, notificationService, $state) {
-        $scope.loginSubmit = function () {
-            $state.go('home');
-        }
-    }
+    app.controller('loginController', ['$scope', 'loginService', '$injector', 'notificationService',
+        function ($scope, loginService, $injector, notificationService) {
+
+            $scope.loginData = {
+                userName: "",
+                password: ""
+            };
+
+            $scope.loginSubmit = function () {
+                loginService.login($scope.loginData.userName, $scope.loginData.password).then(function (response) {
+                    if (response != null && response.error != undefined) {
+                        notificationService.displayError("Đăng nhập không đúng.");
+                    }
+                    else {
+                        var stateService = $injector.get('$state');
+                        stateService.go('home');
+                    }
+                });
+            }
+        }]);
 })(angular.module('tedushop'));
