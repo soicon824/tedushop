@@ -6,12 +6,16 @@
             CreatedDate: new Date(),
             Status: true
         }
+        $scope.moreImages = [];
         $scope.parentCategories = [];
         $scope.loadProductDetail = function () {
             apiService.get('/api/product/getbyid/' + $stateParams.id, null,
                 function (result) {
                     $scope.product = result.data;
                     $scope.moreImages = JSON.parse($scope.product.MoreImages);
+                    if ($scope.moreImages === null) {
+                        $scope.moreImages = [];
+                    }
                 }, function (error) {
                     notificationService.displayError(error.data);
                 });
@@ -25,7 +29,6 @@
             }
             finder.popup();
         }
-        $scope.moreImages = [];
         $scope.chooseMoreImage = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {

@@ -55,6 +55,19 @@ namespace Shop.Web.Infrastructure.Extensions
             product.Status = productViewModel.Status;
         }
 
+        public static void UpdateContactDetail(this ContactDetail ct, ContactDetailViewModel ctvm)
+        {
+            ct.ID = ctvm.ID;
+            ct.Name = ctvm.Name;
+            ct.Phone = ctvm.Phone;
+            ct.Email = ctvm.Email;
+            ct.Website = ctvm.Website;
+            ct.Address = ctvm.Address;
+            ct.Other = ctvm.Other;
+            ct.Lat = ctvm.Lat;
+            ct.Lng = ctvm.Lng;
+            ct.Status = ctvm.Status;
+        }
         public static void UpdatePostCategory(this PostCategory postCategory, PostCategoryViewModel postCategoryViewModel)
         {
             postCategory.ID = postCategoryViewModel.ID;

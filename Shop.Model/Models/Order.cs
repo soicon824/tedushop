@@ -32,6 +32,13 @@ namespace Shop.Model.Models
         [MaxLength(256)]
         public string CustomerMessage { set; get; }
 
+        [StringLength(128)]
+        [Column(TypeName ="nvarchar")]
+        public string CustomerId { set; get; }
+
+        [ForeignKey("CustomerId")]
+        public virtual ApplicationUser User { set; get; }
+
         [MaxLength(256)]
         public string PaymentMethod { set; get; }
 

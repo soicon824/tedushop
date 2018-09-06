@@ -50,3 +50,7 @@ D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Data\obj\Debug\Shop.Da
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Data\obj\Debug\Shop.Data.pdb
 D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addtagsproduct.resources
 D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addentityProductTag.resources
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addContentToSlide.resources
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.updateforeikey.resources
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addtablecontact.resources
+D:\SourceGit\tedushop\Shop.Data\obj\Debug\Shop.Data.Migrations.addcustomerid.resources

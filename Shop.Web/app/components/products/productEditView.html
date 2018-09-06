@@ -6,19 +6,19 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a ui-sref="product_categories">Product</a></li>
-        <li><a href="#">Product Add</a></li>
+        <li><a ui-sref="products">Product</a></li>
+        <li><a href="#">Product Edit</a></li>
     </ol>
 </section>
 <!-- Main content -->
 <section class="content">
     <div class="box box-info container">
         <div class="box-header with-border">
-            <h3 class="box-title">Add form</h3>
+            <h3 class="box-title">Edit form</h3>
         </div>
         <form class="form-horizontal" novalidate name="frmAddProduct" role="form" ng-submit="updateProduct()">
             <div class="form-group">
-                <label class="col-sm-2 control-label">Name</label>
+                <label class="col-sm-2 control-label">Name2</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" required ng-maxlength="256" name="name" ng-model="product.Name" />
                     <span ng-show="frmAddProduct.name.$invalid" class="error">
@@ -36,12 +36,6 @@
                     <span ng-show="frmAddProduct.alias.$invalid" class="error">
                         Please input Alias
                     </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Description</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="description" ng-model="Product.Description" />
                 </div>
             </div>
             <div class="form-group">
@@ -93,14 +87,14 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Description</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" ckeditor="ckeditorOptions" name="description" ng-model="product.Description"></textarea>
+                    <textarea class="form-control"name="description" ng-model="product.Description"></textarea>
 
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Content</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" name="content" ng-model="product.Content"></textarea>
+                    <textarea class="form-control"  ckeditor="ckeditorOptions" name="content" ng-model="product.Content"></textarea>
 
                 </div>
             </div>

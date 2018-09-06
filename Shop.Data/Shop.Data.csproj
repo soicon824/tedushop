@@ -80,8 +80,28 @@
     <Compile Include="Migrations\201808101449217_addentityProductTag.Designer.cs">
       <DependentUpon>201808101449217_addentityProductTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808141450317_addContentToSlide.cs" />
+    <Compile Include="Migrations\201808141450317_addContentToSlide.Designer.cs">
+      <DependentUpon>201808141450317_addContentToSlide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808180451311_updateforeikey.cs" />
+    <Compile Include="Migrations\201808180451311_updateforeikey.Designer.cs">
+      <DependentUpon>201808180451311_updateforeikey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808180943239_addtablecontact.cs" />
+    <Compile Include="Migrations\201808180943239_addtablecontact.Designer.cs">
+      <DependentUpon>201808180943239_addtablecontact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808201354301_addcustomerid.cs" />
+    <Compile Include="Migrations\201808201354301_addcustomerid.Designer.cs">
+      <DependentUpon>201808201354301_addcustomerid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContactDetailRepository.cs" />
+    <Compile Include="Repositories\PageRepository.cs" />
+    <Compile Include="Repositories\SlideRepository.cs" />
+    <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\PostCategoryRepository.cs" />
     <Compile Include="Repositories\PostRepository.cs" />
     <Compile Include="Repositories\ProductCategoryRepository - Copy.cs" />
@@ -123,6 +143,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808101449217_addentityProductTag.resx">
       <DependentUpon>201808101449217_addentityProductTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808141450317_addContentToSlide.resx">
+      <DependentUpon>201808141450317_addContentToSlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808180451311_updateforeikey.resx">
+      <DependentUpon>201808180451311_updateforeikey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808180943239_addtablecontact.resx">
+      <DependentUpon>201808180943239_addtablecontact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201354301_addcustomerid.resx">
+      <DependentUpon>201808201354301_addcustomerid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

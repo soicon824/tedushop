@@ -5,6 +5,7 @@
         [
             'tedushop.products',
             'tedushop.product_categories',
+            'tedushop.contactdetail',
             'tedushop.common'
         ])
         .config(config)

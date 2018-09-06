@@ -1,0 +1,37 @@
+﻿@model Shop.Web.Models.ContactDetailViewModel
+@using BotDetect.Web.Mvc;
+@{
+    ViewBag.Title = "PhanHoi";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+      rel="stylesheet" type="text/css" />
+<div class="women-product">
+    <input type="hidden" id="hidContactDetail" value="@Model.Address" />
+    <input type="hidden" id="hidlat" value="@Model.Lat" />
+    <input type="hidden" id="hidlong" value="@Model.Lng" />
+    <div class="w_content">
+        <h3>Contact Form</h3>
+        <div class="contact-form">
+            @using (Html.BeginForm("SendContactDetail", "ContactDetail", FormMethod.Post))
+            {
+                if (ViewData["SeccessMsg"] != null)
+                {
+                    <div class="alert alert-success" role="alert">
+                        <strong>@ViewData["SeccessMsg"]</strong>
+                    </div>
+                }
+                @Html.ValidationSummary(false, "", new { @class = "error" });
+                @Html.TextBoxFor(model => model.Name, new { @class = "textbox" });
+                @Html.TextBoxFor(model => model.Email, new { @class = "textbox" });
+                @Html.TextAreaFor(model => model.Other);
+
+                MvcCaptcha exampleCaptcha = new MvcCaptcha("contactcapcha");
+                @Html.Captcha(exampleCaptcha)
+                @Html.TextBox("CaptchaCode")
+                <input type="submit" value="Send">
+                <div class="clearfix"> </div>
+            }
+        </div>
+    </div>
+</div>

@@ -4,14 +4,18 @@
     <link href="/Assets/client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <!--theme-style-->
     <link href="/Assets/client/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/Assets/admin/libs/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet" />
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--fonts-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css">
     <!--//fonts-->
-    <script src="/Assets/client/js/jquery.min.js"></script>
-    <!--script-->
+    @*<script src="/Assets/client/js/jquery.min.js"></script>*@
+
+    <script src="~/Assets/admin/libs/jquery/dist/jquery.js"></script><!--script-->
+    <script src="~/Assets/admin/libs/jquery-ui/jquery-ui.js"></script>
+
 </head>
 <body>
     @{ Html.RenderAction("Header", "Home");}
@@ -36,5 +40,9 @@
 
     <!---->
     @{ Html.RenderAction("Footer", "Home");}
+    <script src="~/Assets/client/js/common.js"></script>
+    <script src="~/Assets/admin/libs/mustache/mustache.js"></script>
+    @RenderSection("footerJS", required: false)
+
 </body>
 </html>

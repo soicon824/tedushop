@@ -19,7 +19,6 @@ D:\SourceGit\tedushop\Shop.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 D:\SourceGit\tedushop\Shop.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\SourceGit\tedushop\Shop.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
 D:\SourceGit\tedushop\Shop.Web\bin\roslyn\System.AppContext.dll
-D:\SourceGit\tedushop\Shop.Web\bin\roslyn\System.Collections.Immutable.dll
 D:\SourceGit\tedushop\Shop.Web\bin\roslyn\System.Console.dll
 D:\SourceGit\tedushop\Shop.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 D:\SourceGit\tedushop\Shop.Web\bin\roslyn\System.Diagnostics.Process.dll
@@ -275,3 +274,8 @@ D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web.dll
 D:\Hoctap\TeduShop\tedushop-develop\tedushop-develop\Shop.Web\obj\Debug\Shop.Web.pdb
 D:\SourceGit\tedushop\Shop.Web\bin\CKFinder.dll
+D:\SourceGit\tedushop\Shop.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\SourceGit\tedushop\Shop.Web\bin\BotDetect.dll
+D:\SourceGit\tedushop\Shop.Web\bin\BotDetect.Web.Mvc.dll
+D:\SourceGit\tedushop\Shop.Web\bin\System.Web.Http.Owin.dll
+D:\SourceGit\tedushop\Shop.Web\bin\System.Web.Http.Owin.xml

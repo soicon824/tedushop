@@ -1,0 +1,11 @@
+﻿@model Shop.Web.Models.PageViewModel
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+<div class="single_top">
+    <h2>@Model.Name</h2>
+    @Html.Raw(Model.Content)
+    <div class="clearfix"></div>
+</div>
+

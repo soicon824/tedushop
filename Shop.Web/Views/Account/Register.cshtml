@@ -1,0 +1,58 @@
+﻿@model Shop.Web.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+<div class="register">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken();
+        <div class="error">
+            @Html.ValidationSummary(false)
+        </div>
+        if(ViewData["SuccessMsg"]!=null)
+        {
+            <div class="alert alert-success">
+                <strong>Dang ky thanh cong <a href="dang-nhap.html"></a></strong>
+            </div>
+        }
+        <div class="register-top-grid">
+            <h3>PERSONAL INFORMATION</h3>
+            <div class="mation">
+                <span>Full Name<label>*</label></span>
+                @Html.TextBoxFor(model => model.FullName)
+            </div>
+            <div class="mation">
+                <span>Email<label>*</label></span>
+                @Html.TextBoxFor(model => model.Email)
+            </div>
+            <div class="mation">
+                <span>Address<label>*</label></span>
+                @Html.TextBoxFor(model => model.Address)
+            </div>
+            <div class="mation">
+                <span>Phone<label>*</label></span>
+                @Html.TextBoxFor(model => model.PhoneNumber)
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="register-bottom-grid">
+            <h3>LOGIN INFORMATION</h3>
+            <div class="mation">
+                <span>User name<label>*</label></span>
+                @Html.TextBoxFor(model => model.UserName)
+                <span>Confirm Password<label>*</label></span>
+                @Html.PasswordFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="clearfix"> </div>
+        <div class="register-but">
+            <input type="submit" value="submit">
+            <div class="clearfix"> </div>
+        </div>
+    }
+
+</div>
+

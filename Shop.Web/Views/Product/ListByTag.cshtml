@@ -1,0 +1,81 @@
+﻿
+@{
+    var tag = (Shop.Web.Models.TagViewModel)ViewBag.Tag;
+    ViewBag.Title = "ListByTag "+tag.Name;
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+<div class="women-product">
+    @if (Model.Count > 0)
+    {
+        <div class="w_content">
+            <div class="women">
+                <a href=""><h4>@tag.Name - <span>@Model.TotalCount itemms</span> </h4></a>
+                <ul class="w_nav">
+                    <li>Sort : </li>
+                    <li><a class="active" href="?page=@Model.Page&sortBy=popular&tagid=@tag.ID">popular</a></li> |
+                    <li><a href="?page=@Model.Page&sortBy=new&tagid=@tag.ID">new </a></li> |
+                    <li><a href="?page=@Model.Page&sortBy=discount&tagid=@tag.ID">discount</a></li> |
+                    <li><a href="?page=@Model.Page&sortBy=price&&tagid=@tag.ID">price: Low High </a></li>
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- grids_of_4 -->
+        <div class="grid-product">
+            @foreach (var product in Model.Items)
+            {
+                var url = "/" + product.Alias + ".p-" + product.ID + ".html";
+
+                <div class="product-grid">
+                    <div class="content_box">
+                        <div class="left-grid-view grid-view-left">
+                            <a href="@url">
+                                <img src="@product.Image" class="img-responsive watch-right" alt="@product.Name">
+                                <div class="mask">
+                                    <div class="info">Quick View</div>
+                                </div>
+                            </a>
+                        </div>
+                        <h4><a href="@url">@product.Name</a></h4>
+                        <p>@product.Description</p>
+                        @(product.Price == 0 ? "Lien he" : product.Price.ToString("N2"))
+                    </div>
+                </div>
+            }
+
+            <div class="clearfix"> </div>
+            @if (Model.TotalPages > 1)
+            {
+                var startPageIndex = Math.Max(1, Model.Page - (Model.MaxPage / 2));
+                var endPageIndex = Math.Min(Model.TotalPages, Model.Page + (Model.MaxPage / 2));
+                <nav>
+                    <ul class="pagination">
+                        @if (Model.Page > 1)
+                        {
+                            <li class="page-item"><a class="page-link" href="?page=1&&tagid=@tag.ID">First</a></li>
+                            <li class="page-item"><a class="page-link" href="?page=@(Model.Page-1)&tagid=@tag.ID">Previous</a></li>
+                        }
+                        @for (int i = startPageIndex; i <= endPageIndex; i++)
+                        {
+                            <li class="page-item">
+                                <a class="page-link @(Model.Page ==i?"active":"")" href="?page=@i&&tagid=@tag.ID">@i</a>
+                            </li>
+                        }
+                        @if (Model.Page < Model.TotalPages)
+                        {
+                            <li class="page-item"><a class="page-link" href="?page=@(Model.Page+1)&tagid=@tag.ID">Next</a></li>
+                            <li class="page-item"><a class="page-link" href="?page=@(Model.TotalPages)&tagid=@tag.ID">Last</a></li>
+                        }
+                    </ul>
+                </nav>
+            }
+        </div>
+    }
+    else
+    {
+        <Div class="text-center">Khong co san pham nao</Div>
+    }
+
+</div>
+

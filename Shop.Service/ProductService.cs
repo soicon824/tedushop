@@ -20,6 +20,17 @@ namespace Shop.Service
         Product GetById(int id);
         IEnumerable<Product> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow);
         IEnumerable<Product> GetAll(string keyword);
+        IEnumerable<Product> GetLastest(int top);
+        IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, string sortBy, out int totalRow);
+        IEnumerable<Product> Search(string  keyword, int page, int pageSize, string sortBy, out int totalRow);
+        IEnumerable<string> GetListProductByName(string name);
+        IEnumerable<Product> GetHot(int top);
+        Tag GetTag(string tagId);
+        void IncreaseView(int id);
+        IEnumerable<Product> GetListProductByTag(string tagId, int page, int pageSize, out int totalRow);
+        IEnumerable<Product> GetReatedProducts(int id, int top);
+        IEnumerable<Tag> GetListTagByProductID(int id);
+
         void Savechanges();
     }
     public class ProductService : IProductService
@@ -100,9 +111,114 @@ namespace Shop.Service
             return _productRepository.GetSingleById(id);
         }
 
+        public IEnumerable<Product> GetHot(int top)
+        {
+            var hotProducts = _productRepository.GetMulti(x => x.Status == true && x.HotFlag == true).
+                OrderByDescending(x => x.CreatedDate).Take(top);
+            return hotProducts;
+        }
+
+        public IEnumerable<Product> GetLastest(int top)
+        {
+            var lastestProducts = _productRepository.GetMulti(x => x.Status == true).
+                OrderByDescending(x => x.CreatedDate).Take(top);
+            return lastestProducts;
+        }
+
+        public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, string sortBy, out int totalRow)
+        {
+            var query = _productRepository.GetMulti(x => x.Status == true && x.CategoryID == categoryId);
+            switch (sortBy)
+            {
+                case "popular":
+                    query = query.OrderBy(x => x.ViewCount);
+                    break;
+                case "new":
+                    query = query.OrderByDescending(x => x.CreatedDate);
+                    break;
+                case "discount":
+                    query = query.OrderBy(x => x.PromotionPrice.HasValue);
+                    break;
+                case "price":
+                    query = query.OrderBy(x => x.Price);
+                    break;
+                default:
+                    break;
+            }
+            totalRow = query.Count();
+            return query.Skip((page - 1) * pageSize).Take(pageSize);
+        }
+
+        public IEnumerable<string> GetListProductByName(string name)
+        {
+            return _productRepository.GetMulti(x => x.Status && x.Name.Contains(name)).Select(x=>x.Name);
+        }
+
+        public IEnumerable<Product> GetListProductByTag(string tagId, int page, int pageSize, out int totalRow)
+        {
+            var products = _productRepository.GetListProductByTag(tagId, page, pageSize, out totalRow);
+            return products;
+        }
+
+        public IEnumerable<Tag> GetListTagByProductID(int id)
+        {
+            return _productTagRepository.GetMulti(x => x.ProductID == id,
+                new string[] { "Tag" }).Select(y=>y.Tag);
+        }
+
+        public IEnumerable<Product> GetReatedProducts(int id, int top)
+        {
+            var product = _productRepository.GetSingleById(id);
+            return _productRepository.GetMulti(x => x.Status 
+            && x.ID != id && x.CategoryID == product.CategoryID).
+            OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public Tag GetTag(string tagId)
+        {
+            return _tagRepository.GetSingleByCondition(x => x.ID == tagId);
+        }
+
+        public void IncreaseView(int id)
+        {
+            var product = _productRepository.GetSingleById(id);
+            if (product.ViewCount.HasValue)
+            {
+                product.ViewCount += 1;
+            }
+            else
+            {
+                product.ViewCount = 1;
+            }
+        }
+
         public void Savechanges()
         {
             _unitOfWork.Commit();
+        }
+
+        public IEnumerable<Product> Search(string keyword, int page, int pageSize, string sortBy, out int totalRow)
+        {
+            var query = _productRepository.GetMulti(x => x.Status == true && x.Name.Contains(keyword));
+            switch (sortBy)
+            {
+                case "popular":
+                    query = query.OrderBy(x => x.ViewCount);
+                    break;
+                case "new":
+                    query = query.OrderByDescending(x => x.CreatedDate);
+                    break;
+                case "discount":
+                    query = query.OrderBy(x => x.PromotionPrice.HasValue);
+                    break;
+                case "price":
+                    query = query.OrderBy(x => x.Price);
+                    break;
+                default:
+                    break;
+            }
+            totalRow = query.Count();
+            return query.Skip((page - 1) * pageSize).Take(pageSize);
         }
 
         public void Update(Product product)
